@@ -7,7 +7,7 @@
 
 <struts-config>
     <form-beans>
-    
+        <form-bean name="RegistroForm2" type="servlets_form.RegistroForm2"/>
     </form-beans>
     
     <global-exceptions>
@@ -20,6 +20,9 @@
 
     <action-mappings>
         <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+        <action input="/Registro.jsp" name="RegistroForm2" path="/registrar" scope="request" type="controladores_action.RegistroAction2">
+            <forward name="Registro" path="/Registro.jsp"/>
+        </action>
     </action-mappings>
     
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
