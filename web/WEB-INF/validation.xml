@@ -80,6 +80,27 @@ Contributor(s):
             </field>
         </form>
 
+        <form name="RegistroForm2">
+            <field property="nombre" depends="required">
+                <arg key="RegistoForm2.nombre"/>
+            </field>
+              <field property="apellido" depends="required">
+                <arg key="RegistoForm2.apellido"/>
+            </field>
+              <field property="usuario" depends="required">
+                <arg key="RegistoForm2.usuario"/>
+            </field>
+              <field property="password" depends="required,minlength">
+                <arg0 key="RegistoForm2.password"/>
+                <arg1 name="minlength" key="RegistroForm2.password.min"/>
+                <var-name>minlenght</var-name>
+                <var-value>4</var-value>     
+            </field>
+            
+            <field property="email" depends="required, email">
+                <arg key="RegistroForm2.email"/>
+            </field>
+        </form>
     </formset>
 
     <!-- An example formset for another locale -->
